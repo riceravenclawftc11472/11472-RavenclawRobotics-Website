@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ravenclaw Robotics</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;800;900&display=swap">
+
+</head>
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      
+      <li class="dropdown">
+        <a href="about.html">Community ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="history.html">Our History</a></li>
+          <li><a href="people.html">Our People</a></li>
+          <li><a href="outreach.html">Outreach</a></li>
+        </ul>
+      </li>
+  
+      <li class="dropdown">
+        <a href="engineering.html">Engineering ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="robot.html">Our Robot</a></li>
+          <li><a href="stem.html">STEM Work</a></li>
+        </ul>
+      </li>
+  
+      <li><a href="blogs.html">Blogs</a></li>
+      <li><a href="sponsors.html">Sponsors</a></li>
+    </ul>
+  </nav>
+  <h3 class="normal-title">RAVENCLAW ROBOTICS</h3>
+  <div class="ravenlogo"> 
+    <a href="index.html">
+      <img src="clear-logo-11472.png" alt="Ravenclaw Robotics Logo">
+    </a>
+  </div>
+  <h1 class="home-title">OUR HISTORY</h1>
+
+    <p> "Team 11472 has been competing in the FIRST Tech Challenge for 10 seasons, and a total of 31 official events since 2019. They were a rookie (and began competing) in 2016 and remain active as of the current season, 2025-2026" </p>
+
+
+    <h5>2025</h5>
+    <p>Reach Award</p>
+
+    <h5>2023</h5>
+    <p>Motivate Award 3rd Place</p>
+
+    <h5>2022</h5>
+    <p>Motivate Award</p>
+    <p> Conntect Award</p>
+
+    <h5>2021</h5>
+    <p>Control Award sponsered by Arm, Inc. 3rd Place</p>
+    <p>Connect Award </p>
+    <p>Inspire Award 3rd Place</p>
+    <p>Think Award 2nd Place</p>
+
+    <h5>2020</h5>
+    <p>Inspire Award 3rd Place</p>
+    <p>Connect Award</p>
+    <p>Motivate Award</p>
+
+    <h5>2019</h5>
+    <p>Design Award 3rd Place</p>
+
+    <h3> Team Statistics</h3>
+
+    <h6>Total Awards: 18</h6>
+    <h6>Total Motivate Awards: 7</h6>
+    <h6>Total Connect Awards: 5</h6>
+    <h6>Total Inspire Awards: 2</h6>
+    <h6>Total Design Awards: 2</h6>
+    <h6>Think Awards: 1</h6>
+    <h6>Control Awards: 1</h6>
+    <h6>Total Reach Awards: 1</h6>
+
+
+    <footer>
+      <div class="footer-content">
+          <p>&copy; 2026 Ravenclaw Robotics #11472. All rights reserved.</p>
+          <p> 2016-2026</p>
+          <div class="footer-links">
+            <a href="mailto:team@example.com">Contact Us</a> |
+            <a href="https://instagram.com" target="_blank">Instagram</a> |
+            <a href="https://www.youtube.com/@RavenclawRoboticsFTC11472/featured" target="_blank">Youtube</a>
+          </div>
+        </div>
+  </footer>
+
+  <script>
+    document.addEventListener('mousemove', function(e) {
+      // Create a span element for each sparkle
+      let sparkle = document.createElement('span');
+      sparkle.classList.add('sparkle');
+      
+      // Set position to match the mouse cursor
+      sparkle.style.left = e.pageX + 'px';
+      sparkle.style.top = e.pageY + 'px';
+      
+      // Randomize size slightly for a realistic effect
+      let size = Math.random() * 8 + 4; // Between 4px and 12px
+      sparkle.style.width = size + 'px';
+      sparkle.style.height = size + 'px';
+    
+      document.body.appendChild(sparkle);
+    
+      // Remove the sparkle after its animation completes (600ms)
+      setTimeout(() => {
+        sparkle.remove();
+      }, 600);
+    });
+    </script>
+</body>
+</html>

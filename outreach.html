@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ravenclaw Robotics</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;800;900&display=swap">
+</head>
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      
+      <li class="dropdown">
+        <a href="about.html">Community ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="history.html">Our History</a></li>
+          <li><a href="people.html">Our People</a></li>
+          <li><a href="outreach.html">Outreach</a></li>
+        </ul>
+      </li>
+  
+      <li class="dropdown">
+        <a href="engineering.html">Engineering ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="robot.html">Our Robot</a></li>
+          <li><a href="stem.html">STEM Work</a></li>
+        </ul>
+      </li>
+  
+      <li><a href="blogs.html">Blogs</a></li>
+      <li><a href="sponsors.html">Sponsors</a></li>
+    </ul>
+  </nav>
+
+    <h3 class="normal-title">RAVENCLAW ROBOTICS</h3>
+    <div class="ravenlogo"> 
+      <a href="index.html">
+        <img src="clear-logo-11472.png" alt="Ravenclaw Robotics Logo">
+      </a>
+    </div>
+    <h1 class="home-title">OUTREACH</h1>
+
+    <h4> Hours of Outreach: </h4> <h4> idk</h4>
+    <h4> Events Hosted: </h4> <h4> 1</h4>
+    <h4> People Reached: </h4> <h4> 45 </h4>
+
+    <h2> COMING EVENTS</h2>
+    <h5>more coming up shortly!</h5>
+
+
+    <h2> Mentorship</h2>
+    <h5>we currently are not mentoring any teams but...</h5>
+
+
+    <h2> Mentorship 2.0 </h2>
+    <h5>we have strong ties with...</h5>
+
+    <h3>YAYAY</h3>
+
+    <h3> Previous Events</h3>
+    <div class="previous-events-card">
+      <img src="Screenshot 2026-06-01 at 1.07.08 PM.png" alt="flyer of bake sale1">
+      <img src="Screenshot 2026-06-01 at 1.07.27 PM.png" alt="flyer of bake sale2">
+      <img src="Screenshot 2026-06-01 at 12.58.10 PM.png" alt="flyer of bake sale3">
+      <h3>Bake Sale</h3>
+      <h4 class="date">June 7th, 2026</h4>
+      <h4 class="location">Russel Creek Park</h4>
+      <h4>We had a blast at the bake sale! All the sugar cookies sold out and the lemonade was gone quickly!</h4>
+    </div>
+
+
+    <h2> OLD NEWS</h2>
+    <div class="old-news">
+      <a href="https://spectrumlocalnews.com/news/2021/06/15/plano-all-girls-robotics-team-makes-one-of-a-kind-run-at-state-title">Plano all-girls robotics team makes one-of-a-kind run at state title</a> |
+      <a href="https://www.wfaa.com/article/features/rice-middle-school-robotics-team-qualifies-state-competition/287-43f34b99-f312-4f4d-8de2-599983ac63d4">rice-middle-school-robotics-team-qualifies-state-competition</a> |
+    </div>
+
+
+    <footer>
+      <div class="footer-content">
+          <p>&copy; 2026 Ravenclaw Robotics #11472. All rights reserved.</p>
+          <p> 2016-2026</p>
+          <div class="footer-links">
+            <a href="mailto:team@example.com">Contact Us</a> |
+            <a href="https://instagram.com" target="_blank">Instagram</a> |
+            <a href="https://www.youtube.com/@RavenclawRoboticsFTC11472/featured" target="_blank">Youtube</a>
+          </div>
+        </div>
+  </footer>
+
+  <script>
+    document.addEventListener('mousemove', function(e) {
+      // Create a span element for each sparkle
+      let sparkle = document.createElement('span');
+      sparkle.classList.add('sparkle');
+      
+      // Set position to match the mouse cursor
+      sparkle.style.left = e.pageX + 'px';
+      sparkle.style.top = e.pageY + 'px';
+      
+      // Randomize size slightly for a realistic effect
+      let size = Math.random() * 8 + 4; // Between 4px and 12px
+      sparkle.style.width = size + 'px';
+      sparkle.style.height = size + 'px';
+    
+      document.body.appendChild(sparkle);
+    
+      // Remove the sparkle after its animation completes (600ms)
+      setTimeout(() => {
+        sparkle.remove();
+      }, 600);
+    });
+    </script>
+</body>
+</html>
