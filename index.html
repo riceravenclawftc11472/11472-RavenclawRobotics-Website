@@ -66,6 +66,7 @@
                   <a href="https://www.youtube.com/@RavenclawRoboticsFTC11472/featured" target="_blank">Youtube</a>
                 </div>
               </div>
+              <button id="toggle-cursor-btn" class="nav-btn">Toggle Cursor Trail</button>
         </footer>
     
     </body>
@@ -91,6 +92,16 @@
           sparkle.remove();
         }, 600);
       });
+      // Find the button on the page
+const toggleBtn = document.getElementById('toggle-cursor-btn');
+
+// Listen for when someone clicks the button
+if (toggleBtn) {
+  toggleBtn.addEventListener('click', () => {
+    // Toggles the 'no-trail' class on the <body> tag
+    document.body.classList.toggle('no-trail');
+  });
+}
       </script>
 </body>
 </html>

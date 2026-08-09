@@ -265,3 +265,13 @@ h1, h2, h3 {
     transition: transform 0.3s ease, filter 0.3s ease;
   }
   
+  @media (prefers-reduced-motion: reduce) {
+    /* Hide or disable custom cursor/trail elements */
+    .cursor-trail {
+      display: none !important;
+    }
+  }
+
+  body.no-trail .cursor-trail {
+    display: none !important;
+  }
