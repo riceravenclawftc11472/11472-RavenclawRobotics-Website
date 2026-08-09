@@ -46,38 +46,59 @@
 
     <footer>
       <div class="footer-content">
-          <p>&copy; 2026 Ravenclaw Robotics #11472. All rights reserved.</p>
-          <p> 2016-2026</p>
-          <div class="footer-links">
-            <a href="mailto:team@example.com">Contact Us</a> |
-            <a href="https://instagram.com" target="_blank">Instagram</a> |
-            <a href="https://www.youtube.com/@RavenclawRoboticsFTC11472/featured" target="_blank">Youtube</a>
-          </div>
+        <p>&copy; 2026 Ravenclaw Robotics #11472. All rights reserved.</p>
+        <p>2016-2026</p>
+        <div class="footer-links">
+          <a href="mailto:riceravenclawftc11472@gmail.com" class="footer-btn">Contact Us</a>
+          <a href="https://www.instagram.com/ftc11472riceravenclaw/" target="_blank" class="footer-btn">Instagram</a>
+          <a href="https://www.youtube.com/@RavenclawRoboticsFTC11472" target="_blank" class="footer-btn">YouTube</a>
+          <button id="toggle-cursor-btn" class="footer-btn">Toggle Sparkles</button>
         </div>
-  </footer>
+      </div>
+    </footer>
 
   <script>
-    document.addEventListener('mousemove', function(e) {
-      // Create a span element for each sparkle
-      let sparkle = document.createElement('span');
-      sparkle.classList.add('sparkle');
-      
-      // Set position to match the mouse cursor
-      sparkle.style.left = e.pageX + 'px';
-      sparkle.style.top = e.pageY + 'px';
-      
-      // Randomize size slightly for a realistic effect
-      let size = Math.random() * 8 + 4; // Between 4px and 12px
+    // 1. Check if the user turned off the trail on a previous page
+    if (localStorage.getItem('cursorTrailDisabled') === 'true') {
+      document.body.classList.add('no-trail');
+    }
+
+    // 2. Mouse movement event: Creates sparkles
+    document.addEventListener('mousemove', (e) => {
+      // STOP if the 'no-trail' toggle is active
+      if (document.body.classList.contains('no-trail')) {
+        return;
+      }
+
+      const sparkle = document.createElement('div');
+      sparkle.className = 'sparkle';
+
+      const size = Math.random() * 12 + 6;
       sparkle.style.width = size + 'px';
       sparkle.style.height = size + 'px';
-    
+
+      sparkle.style.left = e.pageX + 'px';
+      sparkle.style.top = e.pageY + 'px';
+
       document.body.appendChild(sparkle);
-    
-      // Remove the sparkle after its animation completes (600ms)
+
       setTimeout(() => {
         sparkle.remove();
       }, 600);
     });
-    </script>
+
+    // 3. Toggle Button: Switches trail state AND saves it to memory
+    const toggleBtn = document.getElementById('toggle-cursor-btn');
+
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('no-trail');
+
+        // Check if no-trail is active and save 'true' or 'false' to localStorage
+        const isDisabled = document.body.classList.contains('no-trail');
+        localStorage.setItem('cursorTrailDisabled', isDisabled);
+      });
+    }
+  </script>
 </body>
 </html>

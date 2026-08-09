@@ -15,6 +15,27 @@ h1, h2, h3 {
     color: #a054eb; /* Electric Purple */
   }
 
+  h1 {
+    font-size: 3.0 rem; /* Make headings huge! */
+  }
+
+  h2 {
+    font-size: 2.6rem; /* Make headings huge! */
+  }
+  h3 {
+    font-size: 2.4rem; /* Make headings huge! */
+  }
+
+  h4 {
+    font-size: 2.2rem; /* Make headings huge! */
+  }
+  h5 {
+    font-size: 2.0rem; /* Make headings huge! */
+  }
+  h6 {
+    font-size: 1.8rem; /* Make headings huge! */
+  }
+
   h4, h5, h6 {
     color: #dab8fc; /* Light Purple */
   }
@@ -135,28 +156,31 @@ h1, h2, h3 {
     border: 2px solid #a855f7;  /* Purple border to match the glow */
     border-radius: 10px;
     padding: 20px;
+  } /* <-- THIS BRACKET WAS MISSING! */
   
-    /* THE GLOW EFFECT */
-    box-shadow: 0px 0px 20px #a855f7;
-  }
-
   body {
-    /* Replaces default cursor with a custom image file */
-    /* (Make sure the image is small, around 32x32 pixels!) */
     cursor: url('Screenshot 2026-08-08 at 11.43.18 AM.png'), auto;
   }
   
   .sparkle {
     position: absolute;
-    pointer-events: none; /* Prevents sparkles from blocking mouse clicks */
-    background-color: #e9d5ff; /* Light purple sparkle color */
+    pointer-events: none;
+    background-color: #e9d5ff;
     border-radius: 50%;
-    box-shadow: 0 0 10px #c084fc, 0 0 20px #ffffff; /* Glowing aura */
+    box-shadow: 0 0 10px #c084fc, 0 0 20px #ffffff;
     animation: fadeOut 0.6s linear forwards;
     z-index: 9999;
   }
   
-  /* Animation that shrinks and fades out the sparkle */
+  /* Toggle Off Styles */
+  body.no-trail {
+    cursor: auto !important;
+  }
+  
+  body.no-trail .sparkle {
+    display: none !important;
+  }
+  
   @keyframes fadeOut {
     0% {
       opacity: 1;
@@ -167,6 +191,26 @@ h1, h2, h3 {
       transform: translate(-50%, -50%) scale(0.2);
     }
   }
+    
+    /* When 'no-trail' class is added to body, reset cursor and hide sparkles */
+    body.no-trail {
+      cursor: auto !important;
+    }
+    
+    body.no-trail .sparkle {
+      display: none !important;
+    }
+    
+    @keyframes fadeOut {
+      0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.2);
+      }
+    }
 
 
   .image-container {
@@ -274,4 +318,50 @@ h1, h2, h3 {
 
   body.no-trail .cursor-trail {
     display: none !important;
+  }
+
+  p {
+    font-size: 20px; /* Try 18px, 24px, or 1.2rem */
+  }
+  
+
+  p {
+    font-weight: bold; /* Or use numbers: 600, 700, 800 */
+  }
+
+  p {
+    line-height: 1.6; /* Adds comfortable space between lines */
+    letter-spacing: 1px; /* Adds space between individual letters */
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  
+  /* Style for individual buttons inside the footer */
+  .footer-btn {
+    background-color: #1e1e24;
+    color: #e9d5ff;
+    border: 2px solid #a855f7;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Hover effect */
+  .footer-btn:hover {
+    background-color: #a855f7;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px #c084fc;
   }
