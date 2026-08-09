@@ -45,11 +45,17 @@
       <h1 class="home-title">Website Log</h1>
         <h2> by Claire Chen</h2>
         <h5> Written Aug 8, 2026</h5>
-        <h5> Updated Aug 8, 2026</h5>
+        <h5> Updated Aug 9, 2026</h5>
         
         <p>Are you looking to create your own website? Do you want to contribute to your FTC team by creating one? Well, good luck! This website was created Aug 7, 2026 by Claire Chen using VS Code and HTML and CSS. This blog is the first blog to be posted on the website and is mainly a log of what updates has this website undergone and the purpose of the edits (with some more detail).</p> 
          
         <p> Recent Updates on Top - less recent below. Please drop a comment and a like, or check out our next post! </p>
+       
+       
+        <h5> Aug 9, 2026</h5>
+
+        <p>Format the blog posts and added hover- mobile compatible, added like and dislike using likebtn. </p>
+
         <h6> Aug 8, 2026</h6>
 
         <p> Morning: Used CSS to change background, add header buttons, add text colors and font, add text graphics, add image sizing tools, add borders to member cards, and added mouse. Evening added mouse toggle, footer button, more text to person, add website to netlify and github and added first blog. Plans for ater: add comment ability on blog, ability to get newsletter.  </p>
@@ -57,6 +63,13 @@
         <h5> Aug 7, 2026</h5>
 
         <p>created basic website with black and white using HTML- loaded pictures and links - learned how to code html (yeah this is my first html project lolol)</p>
+
+        <div class="reaction-section">
+          <p>Was this blog helpful?</p>
+          
+          <span class="likebtn-wrapper" data-theme="custom" data-btn_size="32" data-f_size="14" data-icon_l_c="#a855f7" data-icon_d_c="#ef4444" data-identifier="website-log"></span>
+          <script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a,m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>
+          </div>
 
         <footer>
           <div class="footer-content">
@@ -73,6 +86,7 @@
     
     </body>
     <script>
+      
       // 1. Check if the user turned off the trail on a previous page
       if (localStorage.getItem('cursorTrailDisabled') === 'true') {
         document.body.classList.add('no-trail');
@@ -114,6 +128,29 @@
           localStorage.setItem('cursorTrailDisabled', isDisabled);
         });
       }
+
+let likes = 0;
+let dislikes = 0;
+let hasVoted = false; // Tracks if the user already clicked
+
+function addLike(type) {
+  // If they already clicked, stop the function immediately!
+  if (hasVoted) return;
+
+  if (type === 'up') {
+    likes++;
+    document.getElementById('like-count').textContent = likes;
+  } else if (type === 'down') {
+    dislikes++;
+    document.getElementById('dislike-count').textContent = dislikes;
+  }
+
+  // Mark as voted and disable both buttons visually
+  hasVoted = true;
+  document.getElementById('like-btn').disabled = true;
+  document.getElementById('dislike-btn').disabled = true;
+}
+      
     </script>
 </body>
 </html>

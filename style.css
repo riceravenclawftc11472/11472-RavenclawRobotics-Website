@@ -365,3 +365,334 @@ h1, h2, h3 {
     transform: translateY(-3px);
     box-shadow: 0 0 15px #c084fc;
   }
+
+  .blog-card-link {
+    text-decoration: none;
+    color: inherit; /* Keeps your text colors looking normal */
+    display: block; /* Makes the entire link box match the card size */
+  }
+  
+  /* Card basic styling */
+  .blog-card {
+    background-color: #1e1e24;
+    border: 2px solid #a855f7;
+    border-radius: 12px;
+    padding: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Cool Hover Effect: Card lifts up and glows when hovered */
+  .blog-card-link:hover .blog-card {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px #c084fc;
+  }
+  CSS
+  /* Card link container */
+  .website-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  /* Base card styling */
+  .website-card {
+    position: relative; /* Essential for positioning floating sparkles */
+    background-color: #1e1e24;
+    border: 2px solid #c084fc; /* Slightly brighter border than normal cards */
+    border-radius: 12px;
+    padding: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: visible; /* Allows sparkles to float outside the card */
+  }
+  
+  /* Hover effect: Extra vibrant purple glow and lift */
+  .website-card-link:hover .website-card {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px #c084fc, 0 0 10px #a855f7;
+  }
+  
+  /* --- CSS SPARKLES EFFECT --- */
+  
+  /* Sparkle 1 (Top Left) */
+  .website-card::before {
+    content: "✨";
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-size: 1.2rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Sparkle 2 (Top Right) */
+  .website-card::after {
+    content: "✨";
+    position: absolute;
+    top: -15px;
+    right: 15px;
+    font-size: 1.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Trigger sparkles and float animation on hover */
+  .website-card-link:hover .website-card::before {
+    opacity: 1;
+    animation: floatSparkleLeft 1.2s infinite ease-in-out;
+  }
+  
+  .website-card-link:hover .website-card::after {
+    opacity: 1;
+    animation: floatSparkleRight 1.5s infinite ease-in-out 0.2s;
+  }
+  
+  /* Sparkle Animations */
+  @keyframes floatSparkleLeft {
+    0% {
+      transform: translateY(0) scale(0.8) rotate(0deg);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-25px) scale(1.3) rotate(20deg);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes floatSparkleRight {
+    0% {
+      transform: translateY(0) scale(0.8) rotate(0deg);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-30px) scale(1.4) rotate(-20deg);
+      opacity: 0;
+    }
+  }
+
+  .blog-card-container,
+.website-card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Card Links: Limits the max size of the card */
+.blog-card-link,
+.website-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  max-width: 320px; /* Prevents cards from getting huge */
+  width: 100%;
+}
+
+/* Card Styling: Compact padding */
+.blog-card,
+.website-card {
+  position: relative;
+  background-color: #1e1e24;
+  border: 2px solid #a855f7;
+  border-radius: 12px;
+  padding: 16px; /* Compact padding keeps card height reasonable */
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Make image fit neatly inside the compact card */
+.blog-card img,
+.website-card img {
+  width: 100%;
+  height: 180px; /* Fixed height so cards stay uniform */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+/* --- TEXT SIZING FIXES --- */
+
+/* Main Title: Bigger and clearer */
+.blog-card h3,
+.website-card h3 {
+  font-size: 1.35rem;
+  margin: 8px 0;
+  color: #ffffff;
+}
+
+/* Dates and About info: Readable size */
+.blog-card h4,
+.website-card h4 {
+  font-size: 0.95rem; /* Larger than default h4 */
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 6px 0;
+  color: #d8b4fe;
+}
+
+/* Extra highlight for 'About' text */
+.blog-card h4.about,
+.website-card h4.about {
+  font-size: 1rem;
+  color: #e9d5ff;
+  margin-top: 10px;
+}
+
+/* Hover effects */
+.blog-card-link:hover .blog-card,
+.website-card-link:hover .website-card {
+  transform: translateY(-4px);
+  box-shadow: 0 0 18px #c084fc;
+}
+
+.blog-grid {
+  display: flex;
+  flex-wrap: wrap; /* Allows cards to wrap down to the next row when space runs out */
+  justify-content: center; /* Centers the row neatly */
+  gap: 20px; /* Space between each card */
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto; /* Keeps the whole gallery centered on large screens */
+}
+
+/* Card wrapper link size on desktop */
+.blog-card-link,
+.website-card-link {
+  text-decoration: none;
+  color: inherit;
+  /* flex: growth | shrink | ideal size */
+  flex: 0 1 300px; /* Each card sits at ~300px wide and wraps when room runs out */
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .blog-grid {
+    gap: 15px; /* Slightly tighter gap for mobile screens */
+    padding: 10px;
+  }
+
+  .blog-card-link,
+  .website-card-link {
+    flex: 1 1 100%; /* Forces each card to span full width (one per row) */
+    max-width: 100%;
+  }
+}
+
+.reaction-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 30px 0;
+  padding: 15px;
+  background-color: #1e1e24;
+  border: 1px solid #a855f7;
+  border-radius: 12px;
+}
+
+.reaction-section p {
+  color: #e9d5ff;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Style the thumbs buttons */
+.thumb-btn {
+  background-color: #2a2a36;
+  color: #ffffff;
+  border: 2px solid #a855f7;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.thumb-btn:hover {
+  background-color: #a855f7;
+  transform: scale(1.1);
+}
+
+.thumb-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important; /* Prevents hover scale effect after voting */
+}
+
+.reaction-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 30px 0;
+  padding: 20px;
+  background-color: #1e1e24;
+  border: 1px solid #a855f7;
+  border-radius: 12px;
+}
+
+.reaction-section p {
+  color: #e9d5ff;
+  font-weight: 600;
+  margin: 0;
+}
+
+.reaction-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  
+  /* Sizing & Margins */
+  max-width: 340px;
+  margin: 40px auto;
+  padding: 24px 20px;
+  
+  /* Dark Theme Background & Border */
+  background: linear-gradient(145deg, #1e1e24, #17171c);
+  border: 1px solid #3b2d54;
+  border-radius: 18px;
+  
+  /* Glowing Subtle Shadow */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 
+              0 0 15px rgba(168, 85, 247, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect on the Entire Reaction Box */
+.reaction-section:hover {
+  transform: translateY(-2px);
+  border-color: #a855f7;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5), 
+              0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+/* "Was this blog helpful?" Heading Text */
+.reaction-section p {
+  color: #e9d5ff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+/* Center and pad the widget elements */
+.likebtn-wrapper {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+}
