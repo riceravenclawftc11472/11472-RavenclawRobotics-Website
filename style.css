@@ -11,6 +11,10 @@ body {
   font-family: Lexend, sans-serif;
 }
 
+body {
+  text-align: center;
+}
+
 h1, h2, h3 {
     color: #a054eb; /* Electric Purple */
   }
@@ -705,4 +709,202 @@ h1, h2, h3 {
   border: 1px solid #3b2d54;
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.robot-diagram-container {
+  position: relative;
+  max-width: 900px; /* Adjust based on your screenshot width */
+  margin: 50px auto; /* Centers the container on the page */
+  border: 4px solid #333; /* For visual guide while coding */
+}
+
+/* 2. THE MAIN PHOTO: Sets the base and should always fill the container */
+.main-robot-photo {
+  width: 100%;
+  height: auto;
+  display: block; /* Removes weird gaps below images */
+}
+
+/* 3. THE LABELS: The general style for all the descriptive cards */
+.label-card {
+  position: absolute; /* This allows us to move them freely on top */
+  background: rgba(0, 0, 0, 0.85); /* Semi-transparent dark background */
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  width: 250px;
+  font-family: sans-serif;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  border: 1px solid #FFD700; /* A gold border looks sharp for FTC! */
+  z-index: 10; /* Ensures the card floats ABOVE the image and arrow */
+}
+
+.label-card h3 {
+  margin-top: 0;
+  color: #FFD700; /* Match the border */
+  font-size: 1.1em;
+}
+
+.label-card p {
+  margin: 0;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+/* 4. THE ARROWS (Visual Guides): These point from the card to the part */
+.arrow {
+  position: absolute;
+  width: 2px;
+  background-color: #FFD700; /* Gold arrow to match cards */
+  height: 50px; /* Default height */
+  transform-origin: top; /* Important for rotating */
+  z-index: 5;
+}
+
+/* Optional: Add a simple dot to the tip of the arrow */
+.arrow::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; /* Move the dot to the very tip */
+  left: -3px; /* Center it */
+  width: 8px;
+  height: 8px;
+  background-color: #FFD700;
+  border-radius: 50%;
+}
+
+.drivetrain-label {
+  top: 60%; /* Moves it down from the top edge */
+  left: 5%; /* Moves it slightly in from the left edge */
+}
+
+/* Arrow for Drivetrain */
+.arrow.to-drivetrain {
+  top: 10px;    /* Start at top of card */
+  right: -2px;   /* Center horizontally with the card */
+  height: 100px;
+  transform: rotate(20deg); /* Angles it to point where you need it */
+}
+
+
+/* Label 2: Intake (Middle Right area) */
+.intake-label {
+  top: 20%;
+  right: 5%; /* Aligns it from the RIGHT edge instead of left */
+}
+
+/* Arrow for Intake */
+.arrow.to-intake {
+  top: 60px;     /* Moves it down the side of the card */
+  left: -2px;    /* Positions arrow from left side of card */
+  height: 120px;
+  transform: rotate(-110deg); /* Points it backward and up */
+}
+
+
+/* Label 3: Lift (Top Left area) */
+.lift-label {
+  top: 10%;
+  left: 30%;
+}
+
+/* Arrow for Lift */
+.arrow.to-lift {
+  top: 120px;   /* Moves down from the top of the card */
+  left: 50%;     /* Center it within the card width */
+  height: 80px;
+  transform: rotate(-45deg);
+}
+
+.card {
+  background: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Make cards pop out slightly when hovered */
+.card:hover {
+  transform: translateY(-8px);
+  border-color: #FFD700;
+}
+.backdropimage {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* Make it take up full viewport height if you want! */
+  overflow: hidden;
+}
+
+/* 2. Dimmed and desaturated image */
+.backdropimage > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.3) saturate(0.4);
+  z-index: 1;
+}
+
+/* 3. Purple tint overlay covering the whole header + hero */
+.purple-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(76, 20, 140, 0.7), rgba(15, 5, 30, 0.9));
+  z-index: 2;
+}
+
+/* 4. Content Container sitting ABOVE the purple tint */
+.hero-wrapper {
+  position: relative;
+  z-index: 3; /* Floats above purple-overlay */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* 5. Header and Nav styling */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.nav-bar a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.robot-hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Overlay sits at depth 2 */
+.purple-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(76, 20, 140, 0.7), rgba(15, 5, 30, 0.9));
+  z-index: 2; 
+}
+
+/* Text container MUST sit HIGHER at depth 3 */
+.hero-content {
+  position: relative; /* REQUIRED for z-index to work! */
+  z-index: 3; 
 }
