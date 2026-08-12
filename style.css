@@ -830,7 +830,7 @@ h1, h2, h3 {
   transform: translateY(-8px);
   border-color: #FFD700;
 }
-.backdropimage {
+.homebackdropimage {
   position: relative;
   width: 100%;
   min-height: 100vh; /* Make it take up full viewport height if you want! */
@@ -838,7 +838,7 @@ h1, h2, h3 {
 }
 
 /* 2. Dimmed and desaturated image */
-.backdropimage > img {
+.homebackdropimage > img {
   position: absolute;
   top: 0;
   left: 0;
@@ -856,7 +856,7 @@ h1, h2, h3 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(76, 20, 140, 0.7), rgba(15, 5, 30, 0.9));
+  background: linear-gradient(180deg, rgba(76, 20, 140, 0.7),rgba(15, 5, 30, 0.9));
   z-index: 2;
 }
 
@@ -1098,4 +1098,174 @@ footer {
   background-color: rgba(255, 255, 255, 0.2);
   border-color: #ffffff;
   transform: translateY(-3px);
+}
+
+
+
+.previous-events-card {
+  background: #18142a;
+  border: 1px solid #7c3aed;
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Container for the 3 overlapping images */
+.mini-carousel-track {
+  position: relative;
+  width: 100%;
+  height: 180px; /* Adjust height based on your flyer aspect ratio */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+/* Base style for all 3 images */
+.event-img {
+  position: absolute;
+  left: 50%;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* 📍 Middle Image: Full Size & Focused */
+.event-img.mini-center {
+  transform: translateX(-50%) scale(1);
+  z-index: 2;
+  opacity: 1;
+  border: 2px solid #a855f7;
+}
+
+/* 👈 Left Image: Very small and pushed to the left */
+.event-img.mini-left {
+  transform: translateX(calc(-50% - 100px)) scale(0.55);
+  z-index: 1;
+  opacity: 0.5;
+}
+
+/* 👉 Right Image: Very small and pushed to the right */
+.event-img.mini-right {
+  transform: translateX(calc(-50% + 100px)) scale(0.55);
+  z-index: 1;
+  opacity: 0.5;
+}
+
+/* Text Styling */
+.previous-events-card h3 {
+  margin: 10px 0 5px 0;
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+
+.previous-events-card .date,
+.previous-events-card .location {
+  margin: 2px 0;
+  font-size: 0.9rem;
+  color: #a855f7;
+  font-weight: 600;
+}
+
+.previous-events-card .event-description {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-top: 12px;
+}
+
+.event-img {
+  position: absolute;
+  left: 50%;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  
+  /* Default state: hidden in background */
+  transform: translateX(-50%) scale(0);
+  opacity: 0;
+  z-index: 0;
+}
+
+/* 📍 Center Image */
+.event-img.mini-center {
+  transform: translateX(-50%) scale(1);
+  z-index: 3;
+  opacity: 1;
+  border: 2px solid #a855f7;
+}
+
+/* 👈 Previous (Left) Image */
+.event-img.mini-left {
+  transform: translateX(calc(-50% - 100px)) scale(0.55);
+  z-index: 2;
+  opacity: 0.5;
+}
+
+/* 👉 Next (Right) Image */
+.event-img.mini-right {
+  transform: translateX(calc(-50% + 100px)) scale(0.55);
+  z-index: 2;
+  opacity: 0.5;
+}
+
+
+.backdropimage {
+  position: relative;
+  width: 100%;
+  min-height: 50vh; /* Make it take up full viewport height if you want! */
+  overflow: hidden;
+}
+
+/* 2. Dimmed and desaturated image */
+.backdropimage > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.3) saturate(0.4);
+  z-index: 1;
+}
+
+.old-news-pills {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 15px 0;
+}
+
+.pills-label {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.news-pill {
+  background: rgba(124, 58, 237, 0.15);
+  border: 1px solid #7c3aed;
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.news-pill:hover {
+  background: #7c3aed;
+  transform: translateY(-2px);
 }

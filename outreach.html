@@ -34,48 +34,105 @@
     </ul>
   </nav>
 
-    <h3 class="normal-title">RAVENCLAW ROBOTICS</h3>
-    <div class="ravenlogo"> 
-      <a href="index.html">
-        <img src="clear-logo-11472.png" alt="Ravenclaw Robotics Logo">
-      </a>
-    </div>
-    <h1 class="home-title">OUTREACH</h1>
 
-    <h4> Hours of Outreach: </h4> <h4> idk</h4>
-    <h4> Events Hosted: </h4> <h4> 1</h4>
-    <h4> People Reached: </h4> <h4> 45 </h4>
+  <div class="backdropimage">
+    <img src="Screenshot 2026-08-07 at 8.42.12 PM.png" alt="Ravenclaw Robotics Robot Under Construction">
+    
+    <div class="purple-overlay"></div>
+  
+    <div class="hero-content">
+      <h3 class="normal-title">RAVENCLAW ROBOTICS</h3>
+      
+      <div class="ravenlogo"> 
+        <a href="index.html">
+          <img src="clear-logo-11472.png" alt="Ravenclaw Robotics Logo">
+        </a>
+      </div>
+      
+      <h1 class="home-title">OUTREACH</h1>
+  
+      <section class="robot-hero">
+        <div class="normal-title">
+          <p>fgewyugslkbckuyusyefggckyfcbcffjgyv</p>
+        </div>
+      </section>
+
+      <section class="stats-section">
+        <div class="stats-container">
+          
+          <div class="stat-card">
+            <div class="stat-number">idk</div>
+            <div class="stat-label">Hours of Outreach</div>
+          </div>
+      
+          <div class="stat-card">
+            <div class="stat-number">idk</div>
+            <div class="stat-label">Peope Reached</div>
+          </div>
+      
+          <div class="stat-card">
+            <div class="stat-number">68.5</div>
+            <div class="stat-label">Hours of STEM</div>
+          </div>
+      
+        </div>
+      </section>
+
+    </div> 
+  </div>
 
     <h2> COMING EVENTS</h2>
     <h5>more coming up shortly!</h5>
 
 
     <h2> Mentorship</h2>
-    <h5>we currently are not mentoring any teams but...</h5>
+    <h5> We are mentoring team blah! We hep with blah blah blah!</h5>
+
+    <div class="small-logo">
+    <img src="clear-logo-team1.png" alt="team 1 logo">
+    <h5>Team blah</h5>
+    </div>
+
 
 
     <h2> Mentorship 2.0 </h2>
     <h5>we have strong ties with...</h5>
 
-    <h3>YAYAY</h3>
-
-    <h3> Previous Events</h3>
-    <div class="previous-events-card">
-      <img src="Screenshot 2026-06-01 at 1.07.08 PM.png" alt="flyer of bake sale1">
-      <img src="Screenshot 2026-06-01 at 1.07.27 PM.png" alt="flyer of bake sale2">
-      <img src="Screenshot 2026-06-01 at 12.58.10 PM.png" alt="flyer of bake sale3">
-      <h3>Bake Sale</h3>
-      <h4 class="date">June 7th, 2026</h4>
-      <h4 class="location">Russel Creek Park</h4>
-      <h4>We had a blast at the bake sale! All the sugar cookies sold out and the lemonade was gone quickly!</h4>
-    </div>
+    <div class="small-logo">
+      <img src="clear-logo-team1.png" alt="team 1 logo">
+      <h5>Team blah</h5>
+      </div>
 
 
-    <h2> OLD NEWS</h2>
-    <div class="old-news">
-      <a href="https://spectrumlocalnews.com/news/2021/06/15/plano-all-girls-robotics-team-makes-one-of-a-kind-run-at-state-title">Plano all-girls robotics team makes one-of-a-kind run at state title</a> |
-      <a href="https://www.wfaa.com/article/features/rice-middle-school-robotics-team-qualifies-state-competition/287-43f34b99-f312-4f4d-8de2-599983ac63d4">rice-middle-school-robotics-team-qualifies-state-competition</a> |
-    </div>
+      <div class="previous-events-card">
+  
+        <div class="mini-carousel-track" id="eventCarousel">
+          <img src="Screenshot 2026-06-01 at 1.07.08 PM.png" alt="Flyer 1" class="event-img mini-left">
+          <img src="Screenshot 2026-06-01 at 1.07.27 PM.png" alt="Flyer 2" class="event-img mini-center">
+          <img src="Screenshot 2026-06-01 at 12.58.10 PM.png" alt="Flyer 3" class="event-img mini-right">
+          <img src="flyer4.png" alt="Flyer 4" class="event-img">
+          <img src="flyer5.png" alt="Flyer 5" class="event-img">
+        </div>
+      
+        <h3>Bake Sale</h3>
+        <h4 class="date">June 7th, 2026</h4>
+        <h4 class="location">Russell Creek Park</h4>
+        <p class="event-description">We had a blast at the bake sale! All the sugar cookies sold out and the lemonade was gone quickly!</p>
+      </div>
+
+      <h2>OLD NEWS</h2>
+
+      <div class="old-news-pills">
+        <span class="pills-label">Featured In Media:</span>
+      
+        <a href="https://spectrumlocalnews.com/news/2021/06/15/plano-all-girls-robotics-team-makes-one-of-a-kind-run-at-state-title" target="_blank" class="news-pill">
+           Spectrum News: All-Girls Team State Run
+        </a>
+        
+        <a href="https://www.wfaa.com/article/features/rice-middle-school-robotics-team-qualifies-state-competition/287-43f34b99-f312-4f4d-8de2-599983ac63d4" target="_blank" class="news-pill">
+          WFAA Feature: State Competition Qualifier
+        </a>
+      </div>
 
     <footer>
       <div class="footer-content">
@@ -132,6 +189,36 @@
         localStorage.setItem('cursorTrailDisabled', isDisabled);
       });
     }
+
+    let activeIndex = 0;
+  const eventImages = document.querySelectorAll('#eventCarousel .event-img');
+
+  function updateEventCarousel() {
+    // Reset all images to hidden
+    eventImages.forEach(img => {
+      img.className = 'event-img'; 
+    });
+
+    // Calculate index positions for loop
+    const total = eventImages.length;
+    const prevIndex = (activeIndex - 1 + total) % total;
+    const nextIndex = (activeIndex + 1) % total;
+
+    // Assign active visual classes
+    eventImages[prevIndex].classList.add('mini-left');
+    eventImages[activeIndex].classList.add('mini-center');
+    eventImages[nextIndex].classList.add('mini-right');
+
+    // Move to next photo for the upcoming cycle
+    activeIndex = (activeIndex + 1) % total;
+  }
+
+  // Run initial state setup immediately
+  updateEventCarousel();
+
+  // Cycle automatically every 4 seconds (4000ms)
+  setInterval(updateEventCarousel, 4000);
+
   </script>
 </body>
 </html>
