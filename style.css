@@ -1269,3 +1269,47 @@ footer {
   background: #7c3aed;
   transform: translateY(-2px);
 }
+
+/* Container Box */
+.sponsor-doc-container {
+  background: rgba(124, 58, 237, 0.1);
+  border: 1px solid #7c3aed;
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  margin: 30px auto;
+  max-width: 600px;
+}
+
+.sponsor-doc-container h3 {
+  color: #ffffff;
+  margin-bottom: 8px;
+  font-size: 1.3rem;
+}
+
+.sponsor-doc-container p {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+/* Button Style */
+.sponsor-doc-btn {
+  display: inline-block;
+  background: #7c3aed;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.4);
+}
+
+/* Hover Effect */
+.sponsor-doc-btn:hover {
+  background: #a855f7;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.6);
+}
